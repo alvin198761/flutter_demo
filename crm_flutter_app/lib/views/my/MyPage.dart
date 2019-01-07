@@ -11,7 +11,28 @@ class MyPage extends StatefulWidget {
 class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Text("My");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sample Code'),
+      ),
+      body: Center(
+        child: Text('You have pressed the button '),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: 50.0,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: onButtonClick,
+        tooltip: 'Increment Counter',
+        child: Icon(Icons.exit_to_app),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
+  }
+
+  onButtonClick(){
+
   }
 }

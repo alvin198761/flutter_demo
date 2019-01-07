@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 
 //首页状态
 class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
+  final Function toHome;
+
+  Home(this.toHome);
 
   @override
   State<StatefulWidget> createState() => new _HomePageState();
@@ -14,15 +16,14 @@ class Home extends StatefulWidget {
 
 //首页页面
 class _HomePageState extends State<Home> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
-  final  _tabPageViews = [
+  final _tabPageViews = [
     SportPage(),
     DiscoveryPage(),
     CommunityPage(),
     MyPage()
   ];
-
 
   @override
   Widget build(BuildContext context) {
