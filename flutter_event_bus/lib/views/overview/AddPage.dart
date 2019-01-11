@@ -16,6 +16,9 @@ class _AddPage extends State<AddPage> {
       appBar: AppBar(
         title: Text("添加"),
       ),
+      body: Center(
+        child: Text("添加"),
+      ),
     );
   }
 }

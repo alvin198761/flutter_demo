@@ -16,6 +16,9 @@ class _SearchPage extends State<SearchPage> {
       appBar: AppBar(
         title: Text("查询"),
       ),
+      body: Center(
+        child: Text("查询"),
+      ),
     );
   }
 }

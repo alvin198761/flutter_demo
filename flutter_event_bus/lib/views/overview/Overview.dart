@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_event_bus/views/overview/AddPage.dart';
-import 'package:flutter_event_bus/views/overview/SearchPage.dart';
 import 'package:flutter_event_bus/views/overview/TestTabView.dart';
 
 class Overview extends StatefulWidget {
@@ -27,42 +25,44 @@ class _OverviewState extends State<Overview> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: DefaultTabController(
-          length: _tabs.length,
-          child: Scaffold(
-            appBar: AppBar(
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: _searchPressed,
-                  tooltip: '查询',
+    return new MaterialApp(
+        theme: new ThemeData(primaryColor: Colors.white),
+        home: Center(
+          child: DefaultTabController(
+              length: _tabs.length,
+              child: Scaffold(
+                appBar: AppBar(
+                  actions: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.search),
+                      onPressed: _searchPressed,
+                      tooltip: '查询',
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.add),
+                      onPressed: _addPressed,
+                      tooltip: '添加',
+                    )
+                  ],
+                  title: const Text('运动'),
+                  bottom: new TabBar(
+                    tabs: _tabs,
+                    isScrollable: true,
+                  ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.add),
-                  onPressed: _addPressed,
-                  tooltip: '添加',
-                )
-              ],
-              title: Text("运动"),
-              bottom: new TabBar(
-                tabs: _tabs,
-                isScrollable: true,
-              ),
-            ),
-            body: new TabBarView(
-                children: _tabs.map((Tab tab) {
+                body: new TabBarView(
+                    children: _tabs.map((Tab tab) {
                   return TestTabView();
                 }).toList()),
-          )),
-    );
+              )),
+        ));
   }
 
   void _searchPressed() {
-    Navigator.pushNamed(context,"/overview/search");
+    Navigator.pushNamed(context, "/overview/search");
   }
 
   void _addPressed() {
-    Navigator.pushNamed(context,"/overview/add");
+    Navigator.pushNamed(context, "/overview/add");
   }
 }

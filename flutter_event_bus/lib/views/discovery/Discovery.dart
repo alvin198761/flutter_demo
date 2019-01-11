@@ -13,13 +13,13 @@ class _DiscoveryState extends State<Discovery> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
+    return new MaterialApp(
+        theme: new ThemeData(primaryColor: Colors.white),
+        home: Scaffold(
       appBar: AppBar(
-        title: Text("首页"),
+        title: Text("发现"),
       ),
-      body: Center(
-        child:  Text("发现")
-      ),
-    );
+      body: Center(child: Text("发现")),
+    ));
   }
 }
