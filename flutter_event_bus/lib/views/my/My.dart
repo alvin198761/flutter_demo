@@ -61,9 +61,17 @@ class _MyState extends State<My> {
             )
           ],
         ),
-        body: new Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: new ChoiceCard(choice: _selectedChoice),
+        body: SingleChildScrollView(
+          //解决高度溢出
+          child: new ConstrainedBox(
+            constraints: new BoxConstraints(
+              minHeight: 120.0,
+            ),
+            child: new Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: new ChoiceCard(choice: _selectedChoice),
+            ),
+          ),
         ),
       ),
     );

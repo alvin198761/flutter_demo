@@ -33,12 +33,12 @@ class _BranchState extends State<Branch> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
-        theme: new ThemeData(primaryColor: Colors.white),
-        home: Scaffold(
-//      appBar: AppBar(
-//        title: Text("首页"),
-//      ),
-          body: Column(
+      theme: new ThemeData(primaryColor: Colors.white),
+      home: Scaffold(
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+//            //解决高度溢出
+          child: Column(
             children: <Widget>[
               BannerWidget(
                 data: data,
@@ -65,7 +65,10 @@ class _BranchState extends State<Branch> {
               ),
               NewsListView()
             ],
+//              ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

@@ -26,8 +26,8 @@ module.exports = {
         }, 1000);
     },
 
-    'POST /api/test/save': function (req, res, next) {
-        console.log("news save");
+    'POST /api/news/save': function (req, res, next) {
+        console.log(req.body);
         setTimeout(function () {
             res.json({
                 code: 0,

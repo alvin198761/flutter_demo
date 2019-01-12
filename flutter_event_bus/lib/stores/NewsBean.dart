@@ -3,7 +3,7 @@ class NewsBean {
   final String title;
   final String icon;
   final int clickCount;
-  final DateTime time;
+//  final DateTime time;
   final int mark;
   final String url;
 
@@ -12,7 +12,7 @@ class NewsBean {
       this.title,
       this.icon,
       this.clickCount,
-      this.time,
+//      this.time,
       this.mark,
       this.url});
 
@@ -21,7 +21,7 @@ class NewsBean {
         title = json['title'],
         icon = json['icon'],
         clickCount = json['clickCount'],
-        time = json['time'],
+//        time = DateTime.now(),
         mark = json['mark'],
         url = json['url'];
 
@@ -30,7 +30,7 @@ class NewsBean {
         "title": title,
         "icon": icon,
         "clickCount": clickCount,
-        "time": time,
+//        "time": time,
         "mark": mark,
         "url": url
       };
